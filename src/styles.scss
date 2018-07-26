@@ -1,0 +1,24 @@
+// NativeScript core theme
+// @see https://docs.nativescript.org/ui/theme
+@import '~nativescript-theme-core/scss/skins/light/index';
+@import '~nativescript-theme-core/scss/index';
+
+// Global SCSS styling
+// @see https://docs.nativescript.org/ui/styling
+
+.login_input {
+  .input_field {
+    width: 95%;
+    padding: 15px;
+    border: 1px solid #000;
+  }
+}
+
+.video_player {
+  padding: 20px;
+  iframe {
+    border: 2px solid #eee;
+    border-radius: 5px;
+    padding: 5px;
+  }
+}
