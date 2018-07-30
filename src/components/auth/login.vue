@@ -31,7 +31,15 @@
         },
         methods: {
             login(){
+                let vm = this;
+                this.$http.post('https://tuts-master.herokuapp.com/api/login', vm.ogin_form).then(response => {
 
+                    let login_state = response.data;
+                    this.$store.commit('LOGIN_STATE', login_state);
+
+                }, response => {
+                    console.log(response, 'response failed');
+                });
             }
         },
     };

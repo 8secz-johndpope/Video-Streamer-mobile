@@ -18,3 +18,9 @@
       }
   }
 </script>
+
+<style>
+  .page {
+    padding: 10px;
+  }
+</style>
