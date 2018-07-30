@@ -14,6 +14,7 @@ import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
 Vue.registerElement('VideoPlayer', () => require('nativescript-videoplayer').Video);
+Vue.registerElement('YoutubePlayer', () => require('nativescript-youtubeplayer/angular').YoutubePlayer);
 var VueResource = require('vue-resource');
 
 Vue.use(VueResource);
