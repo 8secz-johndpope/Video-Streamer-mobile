@@ -1,5 +1,6 @@
 <template>
     <page>
+        <ActivityIndicator :busy="loading"  ></ActivityIndicator>
         <ListView class="list-group" for="video in videos" @itemTap="select" style="height:1250px">
             <v-template>
                 <FlexboxLayout flexDirection="row" class="list-group-item" >
