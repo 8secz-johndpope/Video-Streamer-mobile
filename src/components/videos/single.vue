@@ -12,7 +12,7 @@
             <Button text="View Video In Browser" @tap="viewVideo" ></Button>
         </StackLayout>
 
-        <Comments :items="comments" ></Comments>
+        <!-- <Comments :items="comments" ></Comments> -->
 
     </Page>
 
@@ -65,7 +65,7 @@
                 let vm = this;
                 this.$http.get('https://tuts-master.herokuapp.com/api/comment/'+vm.video.id).then(response => {
                     console.log(response, 'comments response');
-                    vm.comments = response.data;
+                    vm.comments = response.data.data;
 
                 }, response => {
                     console.log(response, 'response failed');
