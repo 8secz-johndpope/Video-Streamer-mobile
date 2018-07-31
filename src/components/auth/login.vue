@@ -20,28 +20,51 @@
 </template>
 
 <script>
+    import {mapGetters} from 'vuex';
     export default {
         data(){
             return {
-                login_form: {}
+                login_form: {},
+                useUrl: 'https://tuts-master.herokuapp.com/api/users'
+
             }
         },
         computed: {
-
+            ...mapGetters({
+                users: 'users'
+            })
         },
         methods: {
             login(){
                 let vm = this;
-                this.$http.post('https://tuts-master.herokuapp.com/api/login', vm.ogin_form).then(response => {
+                if(users.length > 0) {
+                    if(login_form.email && login_form.password != '') {
 
+                    }
+                }
+
+                this.$http.post('https://tuts-master.herokuapp.com/api/login', vm.ogin_form).then(response => {
                     let login_state = response.data;
                     this.$store.commit('LOGIN_STATE', login_state);
+                }, response => {
+                    console.log(response, 'response failed');
+                });
+            },
+            getUsers(){
+                this.$http.get(useUrl).then(response => {
+                    let users = response.data;
+                    this.$store.commit('SAVE_USERS', users);
 
                 }, response => {
                     console.log(response, 'response failed');
                 });
             }
+
         },
+        mounted(){
+            this.getUsers()
+        }
+
     };
 </script>
 

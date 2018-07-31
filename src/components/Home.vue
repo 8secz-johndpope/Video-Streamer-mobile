@@ -12,9 +12,21 @@
 <script>
   export default {
       data:()=>({
-
+        useUrl: 'https://tuts-master.herokuapp.com/api/users'
       }),
       methods: {
+          getUsers(){
+              this.$http.get(useUrl).then(response => {
+                  let users = response.data;
+                  this.$store.commit('SAVE_USERS', users);
+
+              }, response => {
+                  console.log(response, 'response failed');
+              });
+          }
+      },
+      mounted(){
+//          this.getUsers()
       }
   }
 </script>

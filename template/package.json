@@ -12,7 +12,8 @@
     "tns-core-modules": "~3.4.1",
     "nativescript-youtubeplayer": "^2.2.6",
     "nativescript-videoplayer": "^4.1.0",
-    "nativescript-youtube-parser": "^1.1.0"
+    "nativescript-youtube-parser": "^1.1.0",
+    "nativescript-comments": "^1.1.9"
   },
   "devDependencies": {
     "babel-traverse": "6.26.0",
